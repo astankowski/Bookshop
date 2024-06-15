@@ -1,0 +1,177 @@
+openapi: 3.0.1
+info:
+  title: Bookstore API
+  description: API for managing a bookstore
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /books:
+    get:
+      summary: Get all books
+      operationId: getAllBooks
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+    post:
+      summary: Create a new book
+      operationId: createBook
+      requestBody:
+        description: The book to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '201':
+          description: Book created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+  /books/{id}:
+    get:
+      summary: Get a book by ID
+      operationId: getBookById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: The book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '404':
+          description: Book not found
+    put:
+      summary: Update a book by ID
+      operationId: updateBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: The book to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '200':
+          description: Book updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '404':
+          description: Book not found
+    delete:
+      summary: Delete a book by ID
+      operationId: deleteBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Book deleted
+        '404':
+          description: Book not found
+  /admin/order-report:
+    get:
+      summary: Generate order report
+      operationId: generateOrderReport
+      responses:
+        '200':
+          description: Order report generated
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookOrder'
+components:
+  schemas:
+    Book:
+      type: object
+      x-class-extra-annotation: "
+      @javax.persistence.Entity 
+      @javax.persistence.Table(name = \"book\")"
+      properties:
+        id:
+          type: integer
+          example: 1
+          x-field-extra-annotation: "
+          @javax.persistence.Id
+          @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)"
+        title:
+          type: string
+          example: "Effective Java"
+        genre:
+          type: string
+          example: "Programming"
+        price:
+          type: number
+          format: double
+          example: 45.99
+        pages:
+          type: integer
+          example: 416
+        visitCount:
+          type: integer
+          example: 0
+        available:
+          type: boolean
+          example: true
+        stock:
+          type: integer
+          example: 100
+        author:
+          $ref: '#/components/schemas/Author'
+    Author:
+      type: object
+      x-class-extra-annotation: "
+      @javax.persistence.Entity
+      @javax.persistence.Table(name = \"author\")"
+      properties:
+        id:
+          type: integer
+          example: 1
+          x-field-extra-annotation: "
+          @javax.persistence.Id 
+          @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)"
+        name:
+          type: string
+          example: "Joshua Bloch"
+    BookOrder:
+      type: object
+      properties:
+        bookId:
+          type: integer
+          example: 1
+        bookName:
+          type: string
+          example: "Effective Java"
+        visitCount:
+          type: integer
+          example: 100
+        quantity:
+          type: integer
+          example: 10
