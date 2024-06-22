@@ -36,8 +36,7 @@ public class OrderService {
         Document document = new Document(PageSize.A4);
         try {
             PdfWriter.getInstance(document, response.getOutputStream());
-
-
+            response.setContentType("application/pdf");
             document.open();
             Font fontTitle = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
             fontTitle.setSize(18);
