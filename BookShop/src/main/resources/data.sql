@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Book
     UUID
     PRIMARY
     KEY,
-    bookName
+    title
     VARCHAR
 (
     255
@@ -41,6 +41,6 @@ CREATE TABLE IF NOT EXISTS Book
 
 INSERT INTO Author (id, name)
 VALUES ('123e4567-e89b-12d3-a456-426614174000', 'John Doe');
-INSERT INTO Book (id, bookName, author_id, genre, price, pages, viewCount, availableCopies)
+INSERT INTO Book (id, title, author_id, genre, price, pages, viewCount, availableCopies)
 VALUES ('223e4567-e89b-12d3-a456-426614174001', 'Sample Book', '123e4567-e89b-12d3-a456-426614174000', 'Fiction', 19.99,
         350, 0, 10);

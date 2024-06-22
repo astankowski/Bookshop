@@ -10,14 +10,6 @@
     </parent>
 
     <artifactId>BookOrder</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>com.jazzkp</groupId>
-            <artifactId>Api-gen</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

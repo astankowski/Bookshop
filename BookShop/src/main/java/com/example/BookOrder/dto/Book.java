@@ -11,8 +11,8 @@ public class Book {
     @Id
     @GeneratedValue
     private UUID id;
-    @Column(name = "BOOKNAME")
-    private String bookName;
+    @Column(name = "TITLE")
+    private String title;
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;

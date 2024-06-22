@@ -176,7 +176,7 @@ components:
         id:
           type: string
           format: uuid
-        bookName:
+        title:
           type: string
         author:
           type: string
