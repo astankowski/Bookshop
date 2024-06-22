@@ -1,25 +1,24 @@
 package com.example.BookShop.mapper;
 
+import com.bookapi.openapi.model.Author;
 import com.bookapi.openapi.model.BookCreateRequest;
 import com.bookapi.openapi.model.BookResponse;
 import com.example.BookShop.dto.Book;
 import com.example.BookOrder.dto.BookOrderRequest;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+
+import java.util.UUID;
 
 
 @Mapper(componentModel = "spring")
 public interface BookMapper {
+    @Mapping(target = "author", source = "author.id")
     BookResponse mapToBookResponse(Book book);
 
-    BookResponse mapToBookResponse(BookCreateRequest bookCreateRequest);
-
+    @Mapping(target = "author.id", source = "author")
     Book mapToBook(BookCreateRequest bookCreateRequest);
 
-    Book mapToBook(BookResponse bookResponse);
-
-    BookCreateRequest mapToBookCreateRequest(Book bookDto);
-
-    BookCreateRequest mapToBookCreateRequest(BookResponse bookResponse);
-
+    @Mapping(target = "bookId", source = "id")
     BookOrderRequest mapToBookOrderRequest(Book bookDto);
 }
