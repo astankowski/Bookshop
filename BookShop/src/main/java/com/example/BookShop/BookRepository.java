@@ -1,6 +1,6 @@
-package com.example.BookOrder;
+package com.example.BookShop;
 
-import com.example.BookOrder.dto.Book;
+import com.example.BookShop.dto.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,17 +1,18 @@
-package com.example.BookOrder.dto;
+package com.example.BookShop.dto;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
 @Data
 @Entity
+@Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue
+    @UuidGenerator
     private UUID id;
-    @Column(name = "TITLE")
     private String title;
     @ManyToOne
     @JoinColumn(name = "author_id")
@@ -19,8 +20,8 @@ public class Book {
     private String genre;
     private Double price;
     private Integer pages;
-    @Column(name = "VIEWCOUNT")
+    @Column(name = "viewcount")
     private Integer viewCount = 0;
-    @Column(name = "AVAILABLECOPIES")
+    @Column(name = "availablecopies")
     private Integer availableCopies;
 }

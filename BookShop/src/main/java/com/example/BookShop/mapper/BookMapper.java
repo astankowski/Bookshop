@@ -1,8 +1,8 @@
-package com.example.BookOrder.mapper;
+package com.example.BookShop.mapper;
 
 import com.bookapi.openapi.model.BookCreateRequest;
 import com.bookapi.openapi.model.BookResponse;
-import com.example.BookOrder.dto.Book;
+import com.example.BookShop.dto.Book;
 import com.example.BookOrder.dto.BookOrderRequest;
 import org.mapstruct.Mapper;
 

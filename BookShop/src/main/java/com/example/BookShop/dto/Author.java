@@ -1,19 +1,18 @@
-package com.example.BookOrder.dto;
+package com.example.BookShop.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.List;
 import java.util.UUID;
 
 @Data
 @Entity
+@Table(name = "author")
 public class Author {
     @Id
-    @GeneratedValue
+    @UuidGenerator
     private UUID id;
     private String name;
     @OneToMany(mappedBy = "author")

@@ -1,4 +1,4 @@
-package com.example.BookOrder.exception;
+package com.example.BookShop.exception;
 
 public class InvalidBookIdException extends RuntimeException {
     public InvalidBookIdException() {

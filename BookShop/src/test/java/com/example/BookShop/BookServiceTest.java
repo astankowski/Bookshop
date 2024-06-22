@@ -1,13 +1,13 @@
-package com.example.BookOrder;
+package com.example.BookShop;
 
 import com.bookapi.openapi.model.BookCreateRequest;
 import com.bookapi.openapi.model.BookResponse;
-import com.example.BookOrder.dto.Author;
-import com.example.BookOrder.dto.Book;
-import com.example.BookOrder.exception.InvalidBookCreateRequestException;
-import com.example.BookOrder.exception.InvalidBookIdException;
-import com.example.BookOrder.feignClients.OrderClient;
-import com.example.BookOrder.mapper.BookMapper;
+import com.example.BookShop.dto.Author;
+import com.example.BookShop.dto.Book;
+import com.example.BookShop.exception.InvalidBookCreateRequestException;
+import com.example.BookShop.exception.InvalidBookIdException;
+import com.example.BookShop.feignClients.OrderClient;
+import com.example.BookShop.mapper.BookMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

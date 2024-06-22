@@ -1,4 +1,4 @@
-package com.example.BookOrder.feignClients;
+package com.example.BookShop.feignClients;
 
 import com.bookapi.openapi.model.BookOrder;
 import com.example.BookOrder.dto.BookOrderRequest;

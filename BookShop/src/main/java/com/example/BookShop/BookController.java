@@ -1,4 +1,4 @@
-package com.example.BookOrder;
+package com.example.BookShop;
 
 import com.bookapi.openapi.api.BookControllerApi;
 import com.bookapi.openapi.model.BookCreateRequest;

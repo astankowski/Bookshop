@@ -1,6 +1,6 @@
-package com.example.BookOrder;
+package com.example.BookShop;
 
-import com.example.BookOrder.dto.Author;
+import com.example.BookShop.dto.Author;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;

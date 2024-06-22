@@ -1,4 +1,4 @@
-package com.example.BookOrder;
+package com.example.BookShop;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;
